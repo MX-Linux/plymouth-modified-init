@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#DEBHELPER#
+
+# preinst script for plymouth-modified-init
+
+#set -e
+
+case "$1" in
+  install|upgrade) dpkg-divert --quiet                                               \
+                               --add                                                 \
+                               --package plymouth-modified-init            \
+                               --rename                              \
+                               --divert /etc/init.d/plymouth.dpkg-distrib \
+                               /etc/init.d/plymouth
+                   ;;
+
+                *) :
+                   ;;
+esac 
+
+exit 0
