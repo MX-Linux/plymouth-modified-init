@@ -15,6 +15,9 @@ PATH="/sbin:/bin:/usr/sbin:/usr/bin"
 NAME="plymouth"
 DESC="Boot splash manager"
 
+# don't run in systemd
+       [ /proc/1/exe -ef /usr/lib/systemd/systemd ] &&  exit 0
+
 test -x /usr/sbin/plymouthd || exit 0
 
 if [ -r "/etc/default/${NAME}" ]
