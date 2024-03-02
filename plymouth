@@ -47,7 +47,7 @@ case "${1}" in
 	start)
 		case "${SPLASH}" in
 			true)
-				/usr/bin/plymouth quit --retain-splash ||/usr/bin/true
+				/usr/bin/plymouth quit --retain-splash 2>/dev/null ||/usr/bin/true
 				;;
 		esac
 		;;
