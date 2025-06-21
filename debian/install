@@ -1,2 +1,2 @@
 plymouth  etc/init.d
-systemd   usr/lib/systemd/system
+systemd/*   usr/lib/systemd/system
