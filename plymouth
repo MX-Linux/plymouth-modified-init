@@ -17,6 +17,9 @@ DESC="Boot splash manager"
 
 # don't run in systemd
        [ /proc/1/exe -ef /usr/lib/systemd/systemd ] &&  exit 0
+    
+# don't run on live   
+[ "$(df --output=source / | tail -n1)" = "overlay" ] && [ -f /etc/live/config/initrd.out ] && echo exit 0
 
 test -x /usr/sbin/plymouthd || exit 0
 

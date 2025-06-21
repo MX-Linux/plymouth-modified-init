@@ -13,6 +13,27 @@ case "$1" in
                             --rename       \
                             --divert /etc/init.d/plymouth.dpkg-distrib \
                             /etc/init.d/plymouth
+                            
+                   dpkg-divert --quiet                                               \
+                               --remove                                                 \
+                               --package plymouth-modified-init            \
+                               --rename                              \
+                               --divert /usr/lib/systemd/system/plymouth-halt.service.dpkg-distrib \
+                               /usr/lib/systemd/system/plymouth-halt.service
+                               
+                   dpkg-divert --quiet                                               \
+                               --remove                                                 \
+                               --package plymouth-modified-init            \
+                               --rename                              \
+                               --divert /usr/lib/systemd/system/plymouth-poweroff.service.dpkg-distrib \
+                               /usr/lib/systemd/system/plymouth-poweroff.service
+                               
+                   dpkg-divert --quiet                                               \
+                               --remove                                                 \
+                               --package plymouth-modified-init            \
+                               --rename                              \
+                               --divert /usr/lib/systemd/system/plymouth-reboot.service.dpkg-distrib \
+                               /usr/lib/systemd/system/plymouth-reboot.service
                 ;;
 
              *) :

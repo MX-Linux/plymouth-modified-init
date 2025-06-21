@@ -1,3 +1,9 @@
+plymouth-modified-init (25.06.1) mx; urgency=medium
+
+  * don't run plymouth at shutdown on live systems
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 20 Jun 2025 20:26:21 -0400
+
 plymouth-modified-init (24.02.1) mx; urgency=medium
 
   * hide info error messages when plymouth shutdown under sysVinit
